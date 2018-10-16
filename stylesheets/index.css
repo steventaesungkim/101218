@@ -1,6 +1,141 @@
+
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
 html, body{
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+}
+
+/* .header{
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, .0975);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    height: 77px;
+    outline: 5px solid blue;
+}
+
+.title-header{
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    height: 77px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    max-width: 1010px;
+    padding: 26px 40px;
+    width: 100%;
+}
+
+.links{
+    flex: 1 9999 0%;
+    min-width: 40px;
+
+}
+
+a{
+    color: black;
+}
+
+.abc{
+
+} */
+
+h1{
+    /* outline: 1px solid red; */
+}
+
+/* begin "picture frame" technique to resize images */
+.thumbnail-item{
+    /* 1. controls the size of the image */
+    /* max-height: 293px; */
+    height: 100%;
+    width: 30%;
+    margin: 20px auto;
+    /* margin-bottom: 20px; */
+    outline: 1px solid blue;
+    /* alternative to using flexbox for centering images or text */
+    text-align: center;
+    /* border-image: 100%; */
+}
+
+.thumbnail-item > img{
+    /* the img adapts to it parent
+    choose either the height or width, not both */
+    /* width: 100%;
+    justify-content: space-around; */
+    /* DEFINITELY, ABSOLUTELY use both max-height and max-width */
+    /* background-size: contain; */
+    max-width: 100%;
+    max-height: 293px;
+}
+/* end "picture frame" technique to resize images */
+
+.thumbnail-container{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    outline: 5px solid red;
+    /* height: 100%; */
+    /* width: 90%; */
+    margin: 100px;
+}
+
+.picture-frame {
+    margin-top: 40px;
+    width: 75%;
+    outline: 5px solid green;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.picture-frame > img {
+    /* the image adapts to its parent
+    DEFINITELY, ABSOLUTELY use both max-height and max-width */
+    max-width: 100%;
+    max-height: 100%;
+    /* overflow: scroll; */
+}
+
+.modal {
+    /* 
+    -cover the whole page, overlap everything
+    -put a see-through gray color on top of the page 
+    -cneter the contents
+    */
+    /* 
+    -to make things overlap, use position: absolute
+    -this lets you set coordinates for where exactly you want to place an element.
+    */
+    /* background-attachment: local, scroll; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* opacity: 1; */
+    transition: all 200ms ease-in-out;
+    
+}
+
+.modal-hidden {
+    /* display: none; */
+    /* visibility: hidden; */
+    /* opacity: 0; */
+    transform: scale(0.00001);
 }
